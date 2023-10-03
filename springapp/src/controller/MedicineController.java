@@ -15,5 +15,7 @@ public class MedicineController{
     }
 
     @PutMapping("/{medicineId}")
-    public List<Medicine> updateMedicine()
+    public List<Medicine> updateMedicine(int medicineId){
+        
+    }
 }
