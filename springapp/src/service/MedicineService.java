@@ -11,21 +11,11 @@ import java.util.Map;
 @Service
 public class MedicineService {
 
-    private Map<Integer, Medicine> medicineMap = new HashMap<>();
-    private int nextMedicineId = 1;
-
-    public boolean addMedicine(Medicine medicine) {
-        medicine.setMedicineId(nextMedicineId);
-        medicineMap.put(nextMedicineId, medicine);
-        nextMedicineId++;
-        return true;
+    public interface MedicineService {
+        boolean addMedicine(Medicine medicine);
+    
+        boolean updateMedicine(int medicineId, Medicine updatedMedicine);
     }
 
-    public boolean updateMedicine(int medicineId, Medicine updatedMedicine) {
-        if (medicineMap.containsKey(medicineId)) {
-            medicineMap.put(medicineId, updatedMedicine);
-            return true;
-        }
-        return false;
-    }
+    
 }
