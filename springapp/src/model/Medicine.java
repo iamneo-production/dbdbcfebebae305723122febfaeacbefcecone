@@ -17,6 +17,30 @@ public class Medicine{
         this.medicineId=medicineId;
     }
     void setMedicineName(String medicineName){
-        this.medicineId=medicineId;
+        this.medicineName=medicineName;
+    }
+    void setPrice(float price){
+        this.price=price;
+    }
+    void setQuantity(int quantity){
+        this.quantity=quantity;
+    }
+    void setDescription(String description){
+        this.description=description;
+    }
+    int getMedicineId(){
+        return medicineId;
+    }
+    String getMedicineName(){
+        return medicineName;
+    }
+    float getPrice(){
+        return price;
+    }
+    int getQuantity(){
+        return quantity;
+    }
+    String getDescription(){
+        return description;
     }
 }
