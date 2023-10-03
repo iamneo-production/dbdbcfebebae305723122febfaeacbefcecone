@@ -4,18 +4,20 @@ import home.coder.project.workspace.springapp.src.model.Medicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/medicines")
-public class MedicineController{
-    @PostMapping()
-    public boolean addMedicine(Medicine medicine){
-        return medicines.add(medicine);
+public class MedicineController {
+
+    @Autowired
+    private MedicineService medicineService;
+
+    @PostMapping("/")
+    public boolean addMedicine(@RequestBody Medicine medicine) {
+        return medicineService.addMedicine(medicine);
     }
 
     @PutMapping("/{medicineId}")
-    public List<Medicine> updateMedicine(int medicineId){
-        
+    public boolean updateMedicine(@PathVariable int medicineId, @RequestBody Medicine updatedMedicine) {
+        return medicineService.updateMedicine(medicineId, updatedMedicine);
     }
 }
