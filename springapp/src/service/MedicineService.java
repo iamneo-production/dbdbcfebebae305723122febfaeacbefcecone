@@ -8,14 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service
-public class MedicineService {
-
-    public interface MedicineService {
-        boolean addMedicine(Medicine medicine);
+public interface MedicineService {
+    boolean addMedicine(Medicine medicine);
     
-        boolean updateMedicine(int medicineId, Medicine updatedMedicine);
-    }
-
-    
+    boolean updateMedicine(int medicineId, Medicine updatedMedicine);
 }
+
